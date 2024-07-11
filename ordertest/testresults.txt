@@ -1,0 +1,10 @@
+test01.txt : true
+test02.txt : false
+test03.txt : true
+test04.txt : false
+test05.txt : true
+test06.txt : false
+test07.txt : true
+test08.txt : false
+test09.txt : true
+test10.txt : false
