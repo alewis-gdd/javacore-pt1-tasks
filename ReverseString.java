@@ -1,6 +1,7 @@
+import java.util.*;
+
 public class ReverseString {
 
-    
     public static String firstImplementation(String word){
         int wordLength;
 
