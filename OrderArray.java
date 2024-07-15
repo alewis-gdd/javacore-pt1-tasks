@@ -45,7 +45,7 @@ public class OrderArray {
 
 
         } catch (NumberFormatException e) {
-            System.err.println("Argument" + args[0] + "must be an integer: " + e.getMessage());
+            System.err.println("Error parsing Integers from file: " + e.getMessage());
             System.exit(1);
 
         } catch (IOException e){
