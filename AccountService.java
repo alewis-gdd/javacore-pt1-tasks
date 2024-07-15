@@ -188,7 +188,7 @@ class AccountDriver {
             System.out.println("Accounts with balance greater than " + inputBalance + ": " + resultCount);
 
         } catch (NumberFormatException e) {
-            System.err.println("Arguments " + inputs[0] + " and " + inputs[1] + " must be integers: " + e.getMessage());
+            System.err.println("Arguments " + inputs[0] + " and " + inputs[1] + " must be floats: " + e.getMessage());
         }
 
 
