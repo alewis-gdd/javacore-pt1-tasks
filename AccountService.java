@@ -171,20 +171,27 @@ class AccountDriver {
 
         inputs = args[0].split(",");
 
-        inputId = Long.parseLong(inputs[0]);
-        inputBalance = Long.parseLong(inputs[1]);
+        try {
+            inputId = Long.parseLong(inputs[0]);
+            inputBalance = Long.parseLong(inputs[1]);
 
-        AccountServiceImpl service = new AccountServiceImpl(accounts);
-        resultAccount = service.findAccountByOwnerId(inputId);
-        resultCount = service.countAccountsWithBalanceGreaterThan(inputBalance);
+            AccountServiceImpl service = new AccountServiceImpl(accounts);
+            resultAccount = service.findAccountByOwnerId(inputId);
+            resultCount = service.countAccountsWithBalanceGreaterThan(inputBalance);
 
-        if (resultAccount == null) {
-            System.err.println("No Record Found With Given ID Number: " + inputId + "\n");
-        } else {
-            System.out.println("Found Account with ID number: " + inputId + "\n" + resultAccount.toString());
+            if (resultAccount == null) {
+                System.err.println("No Record Found With Given ID Number: " + inputId + "\n");
+            } else {
+                System.out.println("Found Account with ID number: " + inputId + "\n" + resultAccount.toString());
+            }
+
+            System.out.println("Accounts with balance greater than " + inputBalance + ": " + resultCount);
+
+        } catch (NumberFormatException e) {
+            System.err.println("Arguments " + inputs[0] + " and " + inputs[1] + " must be integers: " + e.getMessage());
         }
 
-        System.out.println("Accounts with balance greater than " + inputBalance + ": " + resultCount);
+
 
     }
 }
